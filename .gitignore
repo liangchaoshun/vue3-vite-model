@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+proxy-local.js
 *.local
 
 # Editor directories and files

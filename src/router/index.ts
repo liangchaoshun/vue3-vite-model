@@ -8,12 +8,17 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/home",
-    name: "Home",
+    name: "home",
     component: Home,
   },
   {
+    path: "/ncm",
+    name: "cm",
+    component: () => import("@/views/Ncm.vue"),
+  },
+  {
     path: "/about",
-    name: "About",
+    name: "about",
     // route level code-splitting
     // which is lazy-loaded when the route is visited.
     component: () => import("@/views/About.vue"),
