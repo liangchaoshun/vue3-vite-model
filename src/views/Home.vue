@@ -12,27 +12,27 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import ShowCount from "@/components/Show-Count.vue";
-import logo from "../assets/logo.png";
-import { fetchDogImg } from "@/api/funny";
+import { ref, onMounted } from 'vue'
+import ShowCount from '@/components/Show-Count.vue'
+import logo from '../assets/imgs/logo.png'
+import { fetchDogImg } from '@/api/funny'
 
-const date = ref<Date>();
-const src = ref<string>(logo);
+const date = ref<Date>()
+const src = ref<string>(logo)
 
 onMounted(async () => {
-  date.value = new Date();
-});
+  date.value = new Date()
+})
 
 // 获取狗狗的图片接口是国外的，不一定每次都成功
 const changeImage = async () => {
   try {
-    const { message } = await fetchDogImg();
-    src.value = message;
+    const { message = 'something message' } = await fetchDogImg()
+    src.value = message
   } catch (error) {
-    console.log("fetch dog image failed => ", error);
+    console.log('fetch dog image failed => ', error)
   }
-};
+}
 </script>
 <style scoped lang="less">
 .logo {

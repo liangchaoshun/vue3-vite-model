@@ -23,6 +23,13 @@ const routes: Array<RouteRecordRaw> = [
     // which is lazy-loaded when the route is visited.
     component: () => import("@/views/About.vue"),
   },
+  {
+    path: "/three",
+    name: "three",
+    // route level code-splitting
+    // which is lazy-loaded when the route is visited.
+    component: () => import("@/views/Three.vue"),
+  },
 ];
 
 const router = createRouter({
