@@ -54,8 +54,13 @@ export default class ThreeJs {
 
   // 新建透视相机
   setCamera(): void {
+    let vector = new THREE.Vector3()
     // 第二参数就是 长度和宽度比 默认采用浏览器  返回以像素为单位的窗口的内部宽度和高度
-    this.camera = new THREE.PerspectiveCamera(75, this.contWidth / this.contHeight, 0.1, 1000)
+    const camera = new THREE.PerspectiveCamera(75, this.contWidth / this.contHeight, 0.1, 1000)
+    this.camera = camera
+    camera.getWorldDirection(vector)
+    window.vector = vector
+    window.camera = camera
     this.camera.position.z = 5
   }
 
